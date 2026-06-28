@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Контакты BeautyBot — оставьте заявку</title>
+    <meta name="description" content="Свяжитесь с нами для заказа сайта и бота для студии маникюра. Телефон, Telegram, форма заявки.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">Beauty<span class="logo--accent">Bot</span></a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav__link">Главная</a>
+                <a href="product.html" class="nav__link">Продукт</a>
+                <a href="pricing.html" class="nav__link">Цены</a>
+                <a href="contact.html" class="nav__link active nav__link--cta">Записаться</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <span class="section__tag fade-up">Связь</span>
+                <h1 class="page-header__title fade-up delay-1">Запишитесь на консультацию</h1>
+                <p class="page-header__text fade-up delay-2">Ответим на все вопросы, покажем бота в работе и поможем с настройкой.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Info -->
+                    <div class="contact-info fade-up">
+                        <h3 class="contact-info__title">Контакты</h3>
+                        <p class="contact-info__text">Свяжитесь с нами любым удобным способом:</p>
+
+                        <div class="contact-info__item">
+                            <span class="contact-info__label">Телефон</span>
+                            <a href="tel:+79287149723" class="contact-info__value">+7 928 714-97-23</a>
+                        </div>
+
+                        <div class="contact-info__item">
+                            <span class="contact-info__label">Telegram</span>
+                            <a href="https://t.me/BotProk" target="_blank" class="contact-info__value">@BotProk</a>
+                        </div>
+
+                        <div class="contact-info__item">
+                            <span class="contact-info__label">Режим работы</span>
+                            <span class="contact-info__value">Пн-Вс: 10:00 – 22:00</span>
+                        </div>
+
+                        <div class="contact-info__note">
+                            <p>Оставьте заявку через форму или напишите в Telegram. Ответим в течение часа в рабочее время.</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form fade-up delay-1">
+                        <h3 class="contact-form__title">Отправить заявку</h3>
+                        <p class="contact-form__text">Оставьте контакты, и мы свяжемся с вами в ближайшее время.</p>
+
+                        <form id="contactForm" class="form">
+                            <div class="form__group">
+                                <label for="name" class="form__label">Ваше имя</label>
+                                <input type="text" id="name" name="name" class="form__input" placeholder="Например: Анна" required>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Номер телефона</label>
+                                <input type="tel" id="phone" name="phone" class="form__input" placeholder="+7 928 714-97-23" required>
+                            </div>
+
+                            <div class="form__group">
+                                <label for="message" class="form__label">Сообщение</label>
+                                <textarea id="message" name="message" class="form__textarea" placeholder="Расскажите о вашем салоне, сколько мастеров, какие услуги..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--block" id="submitBtn">Отправить заявку</button>
+
+                            <div id="formStatus" class="form__status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="logo">Beauty<span class="logo--accent">Bot</span></a>
+                <p>Автоматизация записи для студий красоты</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Страницы</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="product.html">Продукт</a>
+                    <a href="pricing.html">Цены</a>
+                    <a href="contact.html">Контакты</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Связь</h4>
+                    <a href="tel:+79287149723">+7 928 714-97-23</a>
+                    <a href="https://t.me/BotProk" target="_blank">@BotProk</a>
+                    <span>Пн-Вс 10:00 – 22:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>2026 BeautyBot. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
