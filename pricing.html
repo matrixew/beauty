@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Цены BeautyBot — тарифы на сайт и бот для студии маникюра</title>
-    <meta name="description" content="Тарифы BeautyBot: разработка под ключ 30 000 руб, хостинг 1 500 руб/мес, техподдержка 2 500 руб/мес.">
+    <meta name="description" content="Тарифы BeautyBot: разработка под ключ 30 000 руб, хостинг от 1 500 руб/мес, техподдержка от 2 500 руб/мес.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -32,31 +32,28 @@
             <div class="container">
                 <span class="section__tag fade-up">Цены</span>
                 <h1 class="page-header__title fade-up delay-1">Прозрачные тарифы</h1>
-                <p class="page-header__text fade-up delay-2">Никаких скрытых платежей. Все, что нужно для работы — в одном месте.</p>
+                <p class="page-header__text fade-up delay-2">Никаких скрытых платежей. Все, что нужно для работы — в двух тарифах на выбор.</p>
             </div>
         </section>
 
-        <!-- One-time payment -->
+        <!-- Pricing Cards -->
         <section class="section">
             <div class="container">
-                <div class="section__header fade-up">
-                    <span class="section__tag">Единоразово</span>
-                    <h2 class="section__title">Разработка под ключ</h2>
-                    <p class="section__subtitle">Полная настройка сайта, бота и обучение персонала. Вы получаете готовый инструмент для приема заявок.</p>
-                </div>
-
-                <div class="pricing-single fade-up delay-1">
-                    <div class="pricing-card pricing-card--featured">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Под ключ</h3>
-                            <div class="pricing-card__price">
-                                <span class="pricing-card__amount">30 000</span>
-                                <span class="pricing-card__currency">руб.</span>
-                            </div>
-                            <p class="pricing-card__desc">Единоразовая оплата</p>
+                <div class="pricing-grid pricing-grid--two">
+                    <!-- Тариф 1: Базовый -->
+                    <div class="pricing-full-card fade-up">
+                        <div class="pricing-full-card__header">
+                            <h3 class="pricing-full-card__name">Базовый</h3>
+                            <p class="pricing-full-card__subtitle">Для стабильной работы без лишних затрат</p>
                         </div>
-                        <div class="pricing-card__body">
-                            <ul class="pricing-card__features">
+                        
+                        <div class="pricing-full-card__section">
+                            <div class="pricing-full-card__section-label">Единоразово</div>
+                            <div class="pricing-full-card__price">
+                                <span class="pricing-full-card__amount">30 000</span>
+                                <span class="pricing-full-card__currency">руб.</span>
+                            </div>
+                            <ul class="pricing-full-card__features">
                                 <li>Продающий сайт (5 страниц)</li>
                                 <li>Telegram бот с записью</li>
                                 <li>Кастомизация под ваш бренд</li>
@@ -65,64 +62,108 @@
                                 <li>1 месяц хостинга бесплатно</li>
                                 <li>1 месяц техподдержки бесплатно</li>
                             </ul>
-                            <a href="contact.html" class="btn btn--primary btn--block">Оставить заявку</a>
+                        </div>
+
+                        <div class="pricing-full-card__section pricing-full-card__section--monthly">
+                            <div class="pricing-full-card__section-label">Далее ежемесячно</div>
+                            <div class="pricing-full-card__price pricing-full-card__price--small">
+                                <span class="pricing-full-card__amount">1 500</span>
+                                <span class="pricing-full-card__currency">руб./мес</span>
+                            </div>
+                            <ul class="pricing-full-card__features">
+                                <li>Хостинг сайта</li>
+                                <li>SSL-сертификат</li>
+                                <li>Обновления системы</li>
+                                <li>Резервное копирование</li>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-full-card__footer">
+                            <a href="contact.html" class="btn btn--outline btn--block">Выбрать Базовый</a>
+                        </div>
+                    </div>
+
+                    <!-- Тариф 2: Стандарт -->
+                    <div class="pricing-full-card pricing-full-card--featured fade-up delay-1">
+                        <div class="pricing-full-card__badge">Рекомендуем</div>
+                        <div class="pricing-full-card__header">
+                            <h3 class="pricing-full-card__name">Стандарт</h3>
+                            <p class="pricing-full-card__subtitle">Максимальная поддержка и полный пакет услуг</p>
+                        </div>
+                        
+                        <div class="pricing-full-card__section">
+                            <div class="pricing-full-card__section-label">Единоразово</div>
+                            <div class="pricing-full-card__price">
+                                <span class="pricing-full-card__amount">30 000</span>
+                                <span class="pricing-full-card__currency">руб.</span>
+                            </div>
+                            <ul class="pricing-full-card__features">
+                                <li>Продающий сайт (5 страниц)</li>
+                                <li>Telegram бот с записью</li>
+                                <li>Кастомизация под ваш бренд</li>
+                                <li>Обучение персонала (1-2 часа)</li>
+                                <li>7 дней тест-драйва бесплатно</li>
+                                <li>1 месяц хостинга бесплатно</li>
+                                <li>1 месяц техподдержки бесплатно</li>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-full-card__section pricing-full-card__section--monthly">
+                            <div class="pricing-full-card__section-label">Далее ежемесячно</div>
+                            <div class="pricing-full-card__price pricing-full-card__price--small">
+                                <span class="pricing-full-card__amount">2 500</span>
+                                <span class="pricing-full-card__currency">руб./мес</span>
+                            </div>
+                            <ul class="pricing-full-card__features">
+                                <li>Все из Базового тарифа</li>
+                                <li>Техподдержка в Telegram</li>
+                                <li>Консультации по телефону</li>
+                                <li>Поддержка в WhatsApp</li>
+                                <li>Внесение правок на сайт</li>
+                                <li>Помощь с контентом</li>
+                                <li>Приоритетная обработка заявок</li>
+                            </ul>
+                        </div>
+
+                        <div class="pricing-full-card__footer">
+                            <a href="contact.html" class="btn btn--primary btn--block">Выбрать Стандарт</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Monthly plans -->
+        <!-- What's Included -->
         <section class="section section--dark">
             <div class="container">
                 <div class="section__header fade-up">
-                    <span class="section__tag section__tag--light">Ежемесячно</span>
-                    <h2 class="section__title section__title--light">Поддержка и хостинг</h2>
-                    <p class="section__subtitle section__subtitle--light">Со второго месяца вы можете выбрать удобный тариф обслуживания.</p>
+                    <span class="section__tag section__tag--light">Входит в оба тарифа</span>
+                    <h2 class="section__title section__title--light">Что включено в 30 000 руб.</h2>
                 </div>
-
-                <div class="pricing-grid fade-up delay-1">
-                    <!-- Базовый -->
-                    <div class="pricing-card">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Базовый</h3>
-                            <div class="pricing-card__price">
-                                <span class="pricing-card__amount">1 500</span>
-                                <span class="pricing-card__currency">руб./мес</span>
-                            </div>
-                            <p class="pricing-card__desc">Для стабильной работы</p>
-                        </div>
-                        <div class="pricing-card__body">
-                            <ul class="pricing-card__features">
-                                <li>Хостинг сайта</li>
-                                <li>SSL-сертификат</li>
-                                <li>Обновления системы</li>
-                                <li>Резервное копирование</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn--outline btn--block">Выбрать</a>
-                        </div>
+                <div class="included-grid fade-up">
+                    <div class="included-item">
+                        <h3>Сайт из 5 страниц</h3>
+                        <p>Главная, услуги, мастера, о салоне, контакты — все что нужно клиенту для записи.</p>
                     </div>
-
-                    <!-- Стандарт -->
-                    <div class="pricing-card pricing-card--featured">
-                        <div class="pricing-card__header">
-                            <h3 class="pricing-card__name">Стандарт</h3>
-                            <div class="pricing-card__price">
-                                <span class="pricing-card__amount">2 500</span>
-                                <span class="pricing-card__currency">руб./мес</span>
-                            </div>
-                            <p class="pricing-card__desc">Максимальная поддержка</p>
-                        </div>
-                        <div class="pricing-card__body">
-                            <ul class="pricing-card__features">
-                                <li>Все из Базового</li>
-                                <li>Техподдержка в Telegram</li>
-                                <li>Внесение правок</li>
-                                <li>Помощь с контентом</li>
-                                <li>Приоритетная обработка</li>
-                            </ul>
-                            <a href="contact.html" class="btn btn--primary btn--block">Выбрать</a>
-                        </div>
+                    <div class="included-item">
+                        <h3>Telegram бот</h3>
+                        <p>Принимает заявки, отправляет уведомления администратору, работает как админ-панель.</p>
+                    </div>
+                    <div class="included-item">
+                        <h3>Дизайн под ваш бренд</h3>
+                        <p>Ваши цвета, фото салона, работы мастеров, тексты и описания услуг.</p>
+                    </div>
+                    <div class="included-item">
+                        <h3>Обучение 1-2 часа</h3>
+                        <p>Видеозвонок с администратором и мастерами. Покажем как принимать заявки и управлять ботом.</p>
+                    </div>
+                    <div class="included-item">
+                        <h3>Тест-драйв 7 дней</h3>
+                        <p>Пробуете бота с реальными клиентами. Если не понравится — ничего не платите.</p>
+                    </div>
+                    <div class="included-item">
+                        <h3>1 месяц поддержки</h3>
+                        <p>Помогаем с вопросами, вносим правки, отвечаем в Telegram и по телефону.</p>
                     </div>
                 </div>
             </div>
@@ -142,15 +183,15 @@
                     </div>
                     <div class="faq-item">
                         <h3>Когда нужно оплачивать?</h3>
-                        <p>Только после тест-драйва. Если вас все устраивает — выставляем счет на 30 000 руб. Хостинг и поддержка со второго месяца.</p>
+                        <p>Только после тест-драйва. Если вас все устраивает — выставляем счет на 30 000 руб. Хостинг и поддержка оплачиваются со второго месяца.</p>
                     </div>
                     <div class="faq-item">
                         <h3>Можно ли поменять услуги и мастеров?</h3>
-                        <p>Да, вы можете сами редактировать список услуг, цены и мастеров через админ-панель. Или напишите нам — поменяем бесплатно в рамках поддержки.</p>
+                        <p>Да, вы можете сами редактировать список услуг, цены и мастеров. Или напишите нам — поменяем бесплатно в рамках поддержки.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Что если бот перестанет работать?</h3>
-                        <p>На тарифе Стандарт мы мониторим работу 24/7 и исправляем проблемы в течение часа. На Базовом — пишите нам, ответим в рабочее время.</p>
+                        <h3>Как перейти с Базового на Стандарт?</h3>
+                        <p>В любой момент. Разница в стоимости пересчитывается. Все настройки и данные сохраняются.</p>
                     </div>
                 </div>
             </div>
@@ -171,8 +212,8 @@
     <footer class="footer">
         <div class="container footer__inner">
             <div class="footer__brand">
-                <a href="index.html" class="logo">Beauty<span class="logo--accent">Bot</span></a>
-                <p>Автоматизация записи для студий красоты</p>
+                <a href="index.html" class="logo footer__logo">Beauty<span class="logo--accent-footer">Bot</span></a>
+                <p>Автоматизация записи для студий красоты. Сайты, Telegram боты, онлайн-запись под ключ.</p>
             </div>
             <div class="footer__links">
                 <div class="footer__col">
