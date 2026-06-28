@@ -268,15 +268,22 @@ body {
 }
 /* Hero Centered (без мокапа) */
 .hero--centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    min-height: auto;
 }
 
-.hero__content--full {
+.hero__content--center {
     max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.hero__actions {
+.hero__content--center .hero__actions {
     justify-content: center;
 }
 /* Hero Visual */
