@@ -797,6 +797,30 @@ body {
     align-items: start;
 }
 
+.contact-grid--equal {
+    align-items: stretch;
+}
+
+.contact-grid--equal .contact-info,
+.contact-grid--equal .contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-grid--equal .contact-info__note {
+    margin-top: auto;
+}
+
+.contact-grid--equal .form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contact-grid--equal .form .btn {
+    margin-top: auto;
+}
+
 .contact-info {
     background: var(--color-surface);
     border: 1px solid var(--color-border-light);
