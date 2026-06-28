@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>BeautyBot — Сайт и бот для студии маникюра</title>
+    <meta name="description" content="Готовое решение для студий маникюра: сайт + Telegram бот + онлайн-запись. От 30 000 руб. под ключ.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo">Beauty<span class="logo--accent">Bot</span></a>
+            <nav class="nav" id="nav">
+                <a href="index.html" class="nav__link active">Главная</a>
+                <a href="product.html" class="nav__link">Продукт</a>
+                <a href="pricing.html" class="nav__link">Цены</a>
+                <a href="contact.html" class="nav__link nav__link--cta">Записаться</a>
+            </nav>
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <span class="hero__badge fade-up">Для студий маникюра и салонов красоты</span>
+                    <h1 class="hero__title fade-up delay-1">Сайт + Telegram бот для записи клиентов</h1>
+                    <p class="hero__text fade-up delay-2">Клиенты записываются сами 24/7. Вы получаете уведомления в Telegram. Без администратора, без пропущенных заявок.</p>
+                    <div class="hero__actions fade-up delay-3">
+                        <a href="pricing.html" class="btn btn--primary">Смотреть тарифы</a>
+                        <a href="product.html" class="btn btn--outline">Что внутри</a>
+                    </div>
+                    <div class="hero__stats fade-up delay-4">
+                        <div class="hero__stat">
+                            <span class="hero__stat-num">7 дней</span>
+                            <span class="hero__stat-label">тест-драйв бесплатно</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-num">30 000 руб.</span>
+                            <span class="hero__stat-label">под ключ</span>
+                        </div>
+                        <div class="hero__stat">
+                            <span class="hero__stat-num">1 месяц</span>
+                            <span class="hero__stat-label">поддержка бесплатно</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__visual fade-up delay-2">
+                    <div class="hero__mockup">
+                        <div class="mockup-phone">
+                            <div class="mockup-screen">
+                                <div class="mockup-topbar"></div>
+                                <div class="mockup-chat">
+                                    <div class="mockup-msg mockup-msg--bot">Здравствуйте! Хотите записаться на маникюр?</div>
+                                    <div class="mockup-msg mockup-msg--user">Да, на завтра</div>
+                                    <div class="mockup-msg mockup-msg--bot">Выберите мастера:</div>
+                                    <div class="mockup-msg mockup-msg--bot mockup-msg--options">
+                                        <span>Анна Соколова</span>
+                                        <span>Мария Петрова</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mockup-badge">Telegram бот</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problems Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header fade-up">
+                    <span class="section__tag">Проблема</span>
+                    <h2 class="section__title">Сколько заявок вы теряете?</h2>
+                    <p class="section__subtitle">Пока вы заняты клиентом, телефон разрывается от звонков. Администратор заболел или уволился — запись встала. Клиенты уходят к конкурентам, где можно записаться онлайн.</p>
+                </div>
+                <div class="problems-grid fade-up">
+                    <div class="problem-card">
+                        <h3 class="problem-card__title">Пропущенные звонки</h3>
+                        <p>Клиент звонит, когда вы работаете. Не дозвонился — записался в другой салон. Вы теряете деньги каждый день.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3 class="problem-card__title">Ночные заявки</h3>
+                        <p>Вечером и ночью клиенты листают соцсети и хотят записаться. Без бота они просто забывают о вас к утру.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3 class="problem-card__title">Хаос в расписании</h3>
+                        <p>Записи в блокноте, стикерах и мессенджерах. Двойные брони, путаница с мастерами, недовольные клиенты.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="section__header fade-up">
+                    <span class="section__tag section__tag--light">Решение</span>
+                    <h2 class="section__title section__title--light">BeautyBot решает эти задачи</h2>
+                </div>
+                <div class="features-grid fade-up">
+                    <div class="feature-card">
+                        <h3>Онлайн-запись 24/7</h3>
+                        <p>Клиенты выбирают услугу, мастера и время через сайт или прямо в Telegram. Запись приходит мгновенно.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Уведомления в Telegram</h3>
+                        <p>Новая запись — вы сразу видите в Telegram имя, телефон, услугу и время. Ни одна заявка не потеряется.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Работает на телефоне</h3>
+                        <p>Сайт открывается как приложение. Иконка на экране телефона, быстрая загрузка, работа без интернета.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Все записано</h3>
+                        <p>Клиенты видят занятые слоты и выбирают свободное время. Никаких двойных броней и путаницы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section">
+            <div class="container">
+                <div class="cta-block fade-up">
+                    <h2 class="cta-block__title">Попробуйте бесплатно 7 дней</h2>
+                    <p class="cta-block__text">Подключим бота, настроим под ваш салон, обучим персонал. Если не понравится — ничего не платите.</p>
+                    <a href="contact.html" class="btn btn--primary btn--lg">Оставить заявку</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="logo">Beauty<span class="logo--accent">Bot</span></a>
+                <p>Автоматизация записи для студий красоты</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Страницы</h4>
+                    <a href="index.html">Главная</a>
+                    <a href="product.html">Продукт</a>
+                    <a href="pricing.html">Цены</a>
+                    <a href="contact.html">Контакты</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Связь</h4>
+                    <a href="tel:+79287149723">+7 928 714-97-23</a>
+                    <a href="https://t.me/BotProk" target="_blank">@BotProk</a>
+                    <span>Пн-Вс 10:00 – 22:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>2026 BeautyBot. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
