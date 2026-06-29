@@ -25,7 +25,6 @@ if (burger && nav) {
         document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Закрытие меню при клике на ссылку
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             burger.classList.remove('active');
@@ -34,7 +33,6 @@ if (burger && nav) {
         });
     });
 
-    // Закрытие по Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && nav.classList.contains('open')) {
             burger.classList.remove('active');
@@ -95,12 +93,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// Telegram Bot — Отправка заявок через прокси
+// Telegram Bot — Отправка заявок
 // ============================================
 
 const TELEGRAM_BOT_TOKEN = '8859843095:AAFeUNOlTr9XsVT4Y7gQw3L3qxJbzVwS8y4';
 const TELEGRAM_CHAT_ID = '7792838501';
-const PROXY_URL = 'https://api.allorigins.win/raw?url=';
 
 const contactForm = document.getElementById('contactForm');
 
@@ -112,30 +109,73 @@ if (contactForm) {
         const text = `Новая заявка с сайта BeautyBot!\n\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message || 'Не указано'}\n\n${new Date().toLocaleString('ru-RU')}`;
 
         const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        
-        const params = new URLSearchParams({
-            chat_id: TELEGRAM_CHAT_ID,
-            text: text,
-            parse_mode: 'HTML'
-        });
 
+        // Способ 1: Пробуем через corsproxy.io
         try {
-            // Используем прокси для обхода CORS
-            const response = await fetch(PROXY_URL + encodeURIComponent(`${telegramUrl}?${params.toString()}`));
+            const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(telegramUrl);
+            const response = await fetch(proxyUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: text,
+                    parse_mode: 'HTML'
+                })
+            });
+
             const data = await response.json();
-            
-            console.log('Ответ Telegram:', data);
 
-            if (!data.ok) {
-                console.error('Ошибка Telegram:', data.description);
-                return false;
+            if (data.ok) {
+                console.log('Заявка отправлена через corsproxy.io');
+                return true;
             }
-
-            return true;
         } catch (error) {
-            console.error('Ошибка отправки:', error);
-            return false;
+            console.log('corsproxy.io не сработал, пробуем другой способ...');
         }
+
+        // Способ 2: Пробуем через allorigins
+        try {
+            const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(
+                telegramUrl + '?chat_id=' + TELEGRAM_CHAT_ID + '&text=' + encodeURIComponent(text) + '&parse_mode=HTML'
+            );
+            const response = await fetch(proxyUrl);
+            const data = await response.json();
+
+            if (data.ok) {
+                console.log('Заявка отправлена через allorigins');
+                return true;
+            }
+        } catch (error) {
+            console.log('allorigins не сработал...');
+        }
+
+        // Способ 3: Прямой запрос (может сработать на некоторых хостингах)
+        try {
+            const response = await fetch(telegramUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: text,
+                    parse_mode: 'HTML'
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.ok) {
+                console.log('Заявка отправлена напрямую');
+                return true;
+            }
+        } catch (error) {
+            console.log('Прямой запрос не сработал');
+        }
+
+        return false;
     }
 
     contactForm.addEventListener('submit', async function(e) {
@@ -171,5 +211,9 @@ if (contactForm) {
 
         submitBtn.disabled = false;
         submitBtn.textContent = 'Отправить заявку';
+
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 8000);
     });
 }
