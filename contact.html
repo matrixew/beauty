@@ -68,7 +68,7 @@
                             </div>
                             <div class="form__group">
                                 <label for="phone" class="form__label">Номер телефона</label>
-                                <input type="tel" id="phone" name="phone" class="form__input" placeholder="+7 999 969-89-87" required>
+                                <input type="tel" id="phone" name="phone" class="form__input" placeholder="+7 928 714-97-23" required>
                             </div>
                             <div class="form__group">
                                 <label for="message" class="form__label">Сообщение</label>
@@ -113,5 +113,89 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // ============================================
+        // Telegram бот для заявок
+        // ============================================
+
+        const TELEGRAM_BOT_TOKEN = '8859843095:AAFeUNOlTr9XsVT4Y7gQw3L3qxJbzVwS8y4';
+        const TELEGRAM_CHAT_ID = '7792838501';
+
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+
+        async function sendToTelegram(name, phone, message) {
+            const text = `Новая заявка с сайта BeautyBot!\n\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message || 'Не указано'}\n\n${new Date().toLocaleString('ru-RU')}`;
+
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                const data = await response.json();
+                console.log('Ответ Telegram:', data);
+
+                if (!data.ok) {
+                    console.error('Ошибка Telegram:', data.description);
+                    return false;
+                }
+
+                return true;
+            } catch (error) {
+                console.error('Ошибка отправки:', error);
+                return false;
+            }
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !phone) {
+                formStatus.className = 'form__status error';
+                formStatus.textContent = 'Пожалуйста, заполните имя и телефон.';
+                formStatus.style.display = 'block';
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            formStatus.style.display = 'none';
+
+            const success = await sendToTelegram(name, phone, message);
+
+            if (success) {
+                formStatus.className = 'form__status success';
+                formStatus.textContent = 'Спасибо! Заявка отправлена. Мы свяжемся с вами.';
+                formStatus.style.display = 'block';
+                form.reset();
+            } else {
+                formStatus.className = 'form__status error';
+                formStatus.textContent = 'Ошибка отправки. Напишите нам в Telegram @BotProk или позвоните +7 928 714-97-23';
+                formStatus.style.display = 'block';
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Отправить заявку';
+
+            setTimeout(() => {
+                formStatus.style.display = 'none';
+            }, 10000);
+        });
+    </script>
 </body>
 </html>
